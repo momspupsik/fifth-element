@@ -1,0 +1,85 @@
+body {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    font-family: "Arial";
+    font-weight: lighter;
+    text-align: justify;
+    color: black;
+}
+
+main{
+    margin: 50px 0;
+    padding: 70px;
+    position: relative;
+    top:-80px;
+    left:-30px;
+    font-weight: lighter;
+}
+
+header{
+    margin: 30px 0;
+    padding: 30px;
+    font-size: 60px;
+    text-align: center;
+    background: #0D6EFD;
+    color: white;
+    font-weight: 500;
+}
+
+input{
+    display: none;
+}
+
+button{
+    font-family: "Arial", sans-serif;
+    background-color: #0D6EFD; /* Green */
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    position:relative;
+    top: -130px;
+
+}
+
+    footer{
+    margin: 50px 0;
+    padding: 40px;
+}
+
+.modal{
+   text-align:center;
+}
+
+.selcls {
+
+    padding: 15px;
+
+    border: solid 1px #517B97;
+
+    outline: 0;
+
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #CAD9E3), to(#FFFFFF));
+
+    background: -moz-linear-gradient(top, #FFFFFF, #CAD9E3 1px, #FFFFFF 25px);
+
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+
+    width: fit-content;
+    position:relative;
+    top:-70px;
+
+}

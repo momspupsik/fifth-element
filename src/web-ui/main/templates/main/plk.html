@@ -1,0 +1,100 @@
+{% load static %}
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Инновационное решение</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>PLC</header>
+    <main>
+        Пожалуйста, загрузите файл на любом высокоуровневом языке программирования.
+    </main>
+    <input type="file" id="file">
+    <button id="upload">Загрузить</button>
+    <small id="status"></small>
+    <script>
+        const file = document.getElementById('file');
+        const upload = document.getElementById('upload');
+        const status = document.getElementById(status);
+
+        upload.addEventListener('click', () => {
+            // set status to uploading
+            status.innerHTML = 'uploading…';
+
+            const fileReader = new FileReader();
+            fileReader.readAsArrayBuffer(file.files[0]);
+
+
+            fileReader.onload = async (event) => {
+                // generate a file name
+                const fileName = Math.random().toString(36).slice(-6) + file.files[0].name;
+                // ВОТ ТУТ ВАШ БЕК
+                await fetch('/upload?fileName=' + fileName, {
+                    'method' : 'POST',
+                    'headers' : {
+                        'content-type' : "application/octet-stream",
+                        'content-length' : event.target.result.byteLength,
+                    },
+                    'body': event.target.result
+                })
+
+
+
+                status.innerHTML = 'uploaded!!!';
+            }
+        });
+    </script>
+    <div class="modal">
+    <form>
+ <select name="user_profile_color_2" required="required" class="selcls">
+  <option value="">Выберите значение</option>
+  <option value="1">Синий</option>
+  <option value="2">Зеленый</option>
+  <option value="3">Желтый</option>
+  <option value="4">Красный</option>
+  <option value="5">Оранжевый</option>
+  <option value="6">Черный</option>
+</select> <br> <br>
+         <select name="user_profile_color_2" required="required" class="selcls">
+  <option value="">Выберите значение</option>
+  <option value="1">Синий</option>
+  <option value="2">Зеленый</option>
+  <option value="3">Желтый</option>
+  <option value="4">Красный</option>
+  <option value="5">Оранжевый</option>
+  <option value="6">Черный</option>
+</select> <br> <br>
+         <select name="user_profile_color_2" required="required" class="selcls">
+  <option value="">Выберите значение</option>
+  <option value="1">Синий</option>
+  <option value="2">Зеленый</option>
+  <option value="3">Желтый</option>
+  <option value="4">Красный</option>
+  <option value="5">Оранжевый</option>
+  <option value="6">Черный</option>
+</select> <br> <br>
+        <select name="user_profile_color_2" required="required" class="selcls">
+  <option value="">Выберите значение</option>
+  <option value="1">Синий</option>
+  <option value="2">Зеленый</option>
+  <option value="3">Желтый</option>
+  <option value="4">Красный</option>
+  <option value="5">Оранжевый</option>
+  <option value="6">Черный</option>
+</select> <br> <br>
+        <select name="user_profile_color_2" required="required" class="selcls">
+  <option value="">Выберите значение</option>
+  <option value="1">Синий</option>
+  <option value="2">Зеленый</option>
+  <option value="3">Желтый</option>
+  <option value="4">Красный</option>
+  <option value="5">Оранжевый</option>
+  <option value="6">Черный</option>
+        </select>
+    </form>
+        </div>
+</body>
+</html>
