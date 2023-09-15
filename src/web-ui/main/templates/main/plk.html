@@ -12,10 +12,16 @@
     <main>
         Пожалуйста, загрузите файл на любом высокоуровневом языке программирования.
     </main>
-    <input type="file" id="file">
-    <button id="upload">Загрузить</button>
-    <small id="status"></small>
-    <script>
+    <form action="/upload" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <div>
+          <label for="file">Choose file to upload</label>
+          <input type="file" id="file" name="file" multiple />
+        </div>
+        <div>
+          <button>Submit</button>
+        </div>
+    </form>
+    <!--script>
         const file = document.getElementById('file');
         const upload = document.getElementById('upload');
         const status = document.getElementById(status);
@@ -32,7 +38,7 @@
                 // generate a file name
                 const fileName = Math.random().toString(36).slice(-6) + file.files[0].name;
                 // ВОТ ТУТ ВАШ БЕК
-                await fetch('/upload?fileName=' + fileName, {
+                await fetch('/upload', {
                     'method' : 'POST',
                     'headers' : {
                         'content-type' : "application/octet-stream",
@@ -46,7 +52,7 @@
                 status.innerHTML = 'uploaded!!!';
             }
         });
-    </script>
+    </script-->
     <div class="modal">
     <form>
  <select name="user_profile_color_2" required="required" class="selcls">
